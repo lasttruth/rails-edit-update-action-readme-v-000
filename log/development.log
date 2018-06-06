@@ -548,3 +548,30 @@ Processing by PostsController#update as HTML
   [1m[35m (2.4ms)[0m  commit transaction
 Redirected to http://67.205.165.109:54520/posts/3
 Completed 302 Found in 12ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/3" for 108.54.242.87 at 2018-06-06 03:28:22 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3/edit" for 108.54.242.87 at 2018-06-06 03:28:28 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/3" for 108.54.242.87 at 2018-06-06 03:28:56 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZYLV/J8Eb0a9IIDGr0XG904LMasPCdUT9PT3WSVijubfcE8Kwhwa5zU8bLatFXN8hCvpq5o4BG2OqxSe/i4Lcw==", "title"=>"nana", "description"=>"ora ora ora ora ora ora ora ora ora ora!!!!!!!!!!!", "commit"=>"Submit Post", "id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "nana"], ["description", "ora ora ora ora ora ora ora ora ora ora!!!!!!!!!!!"], ["updated_at", "2018-06-06 03:28:56.506656"], ["id", 3]]
+  [1m[35m (34.1ms)[0m  commit transaction
+Redirected to http://67.205.165.109:54520/posts/3
+Completed 302 Found in 38ms (ActiveRecord: 34.6ms)
